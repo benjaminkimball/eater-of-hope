@@ -6,11 +6,19 @@ const { NODE_ENV, PORT } = process.env
 
 const app = express()
 
+const { readFileSync } = require('fs')
+const { join } = require('path')
+
+const html = readFileSync(join(process.cwd(), 'dist/index.html'))
+  .toString()
+  .replace(/"\//g, '"http://localhost:1234/')
+
 app.use(helmet())
 app.use(logger('dev'))
 
 app.get('*', (req, res) => {
-  res.end('Hey.')
+  res.type('text/html')
+  res.end(html)
 })
 
 NODE_ENV !== 'test' && app.listen(PORT, '0.0.0.0', () => {
