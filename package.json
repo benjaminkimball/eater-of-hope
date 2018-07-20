@@ -6,6 +6,8 @@
   "scripts": {
     "lint": "eslint .",
     "lint:styles": "stylelint **/*.css",
+    "start:client": "parcel src/client/index.html",
+    "start:server": "nodemon -x 'node -r dotenv/config' src/server/index.js",
     "test": "NODE_ENV=test TZ=UTC jest",
     "test:coverage": "npm test -- --coverage",
     "test:watch": "npm test -- --watch"
