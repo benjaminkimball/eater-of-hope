@@ -1,0 +1,11 @@
+env:
+  jest/globals: true
+extends:
+  - plugin:jest/recommended
+  - plugin:security/recommended
+  - standard
+  - standard-react
+parser: babel-eslint
+plugins:
+  - jest
+  - security
