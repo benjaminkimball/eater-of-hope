@@ -10,7 +10,7 @@ const app = express()
 const { readFileSync } = require('fs')
 const { join } = require('path')
 
-function getFilteredClientConfigObj (configObj) {
+function getConfig (configObj) {
   return {
     process: {
       env: Object.entries(configObj)
@@ -24,7 +24,7 @@ function getConfigScriptTag (configObj) {
   return `<script>window.global = ${serialize(config)}</script>`
 }
 
-const config = getFilteredClientConfigObj(global.process.env)
+const config = getConfig(global.process.env)
 const html = readFileSync(join(process.cwd(), 'dist/index.html'))
   .toString()
   .replace(/"\//g, `"${ASSETS_BASE_URL}/`)
