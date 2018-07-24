@@ -1,0 +1,4 @@
+{
+  "env": { "TZ": "UTC" },
+  "exec": "node --require dotenv/config"
+}
