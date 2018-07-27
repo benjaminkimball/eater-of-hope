@@ -26,15 +26,20 @@
   "dependencies": {
     "express": "^4.16.3",
     "helmet": "^3.13.0",
+    "lodash": "^4.17.10",
     "morgan": "^1.9.0",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
+    "redux": "^4.0.0",
+    "reselect": "^3.0.1",
     "serialize-javascript": "^1.5.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.6",
+    "babel-plugin-lodash": "^3.3.4",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",

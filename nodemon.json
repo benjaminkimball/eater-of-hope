@@ -1,5 +1,6 @@
 {
   "env": { "TZ": "UTC" },
   "exec": "node --require dotenv/config",
-  "watch": ["dist/"]
+  "ext": "css,html,js",
+  "watch": ["dist/", "src/server"]
 }
