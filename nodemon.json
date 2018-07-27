@@ -1,4 +1,5 @@
 {
   "env": { "TZ": "UTC" },
-  "exec": "node --require dotenv/config"
+  "exec": "node --require dotenv/config",
+  "watch": ["dist/"]
 }
