@@ -1,10 +1,10 @@
-# eater-of-hope
+# Front-end Client and Server (Eater of Hope)
 
 As always, use [Node Version Manager](https://github.com/creationix/nvm)!
 
 ## Getting started
 
-The following with ensure you are using the correct Node version, install the project dependencies, and run the client-side app.
+The following with ensure you are using the correct version of Node, install the project dependencies, and run the client-side app.
 
 ```shell
 nvm install
@@ -18,4 +18,4 @@ After `npm run client` says it has built, run the following in a separate termin
 npm run server
 ```
 
-Yes, the separate terminal tab setup seems annoying, but once you start writing code you will quickly forget about it. Trust me!
+Yes, the separate terminal tab setup seems annoying. Once you start developing with this toolbelt, you will quickly forget about it. Trust me!
