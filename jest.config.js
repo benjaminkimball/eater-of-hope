@@ -6,5 +6,6 @@ module.exports = {
     '<rootDir>/dist/',
     '<rootDir>/node_modules/'
   ],
+  // NOTE: Needed to test the server's CommonJS modules!
   testURL: 'http://localhost/'
 }
