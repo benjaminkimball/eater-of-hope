@@ -2,5 +2,5 @@
   "env": { "TZ": "UTC" },
   "exec": "node --require dotenv/config",
   "ext": "css,html,js",
-  "watch": ["dist/", "src/server"]
+  "watch": ["dist", "src/server"]
 }
