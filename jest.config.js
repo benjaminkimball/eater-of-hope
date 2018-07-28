@@ -5,5 +5,6 @@ module.exports = {
     '<rootDir>/coverage/',
     '<rootDir>/dist/',
     '<rootDir>/node_modules/'
-  ]
+  ],
+  testURL: 'http://localhost/'
 }
