@@ -1,6 +1,6 @@
 {
   "env": { "TZ": "UTC" },
-  "exec": "node --require dotenv/config",
+  "exec": "node --require babel-register --require dotenv/config",
   "ext": "css,html,js",
   "watch": ["dist", "src/server"]
 }

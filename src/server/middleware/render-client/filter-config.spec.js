@@ -1,4 +1,4 @@
-const filterConfig = require('./filter-config')
+import filterConfig from './filter-config'
 
 describe('filterConfig()', () => {
   it('returns an empty object by default', () => {
