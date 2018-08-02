@@ -1,4 +1,4 @@
-import app from './server'
+const app = require('./server')
 
 app.listen(5000, () => {
   console.log(`Server running at http://localhost:5000`)

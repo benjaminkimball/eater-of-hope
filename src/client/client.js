@@ -1,6 +1,10 @@
-import React from 'react'
-import { hydrate } from 'react-dom'
+import React, { Component } from 'react'
+import { render } from 'react-dom'
 
-import App from '../common/app'
+class App extends Component {
+  render () {
+    return <h1>Hey.</h1>
+  }
+}
 
-hydrate(<App />, document.getElementById('root'))
+render(<App />, document.getElementById('root'))

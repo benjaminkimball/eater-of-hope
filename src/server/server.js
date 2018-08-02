@@ -1,13 +1,12 @@
-import express from 'express'
-import { readFileSync } from 'fs'
-import helmet from 'helmet'
-import logger from 'morgan'
-import { join } from 'path'
+const express = require('express')
+const { readFileSync } = require('fs')
+const helmet = require('helmet')
+const logger = require('morgan')
+const { join } = require('path')
 
-import renderClient from './middleware/render-client'
+const renderClient = require('./middleware/render-client')
 
-const app = express()
-export default app
+const app = module.exports = express()
 
 app.use(helmet())
 app.use(logger('dev'))
