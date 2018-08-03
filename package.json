@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "lint:styles": "stylelint **/*.css",
     "server": "nodemon src/server/index.js",
-    "start": "echo '\\033[1mReview the README to get up and running!\\033[0m'",
+    "start": "echo '\\033[1mReview the README to get up and running!'",
     "test": "NODE_ENV=test TZ=UTC jest",
     "test:coverage": "npm test -- --coverage",
     "test:watch": "npm test -- --watch"
