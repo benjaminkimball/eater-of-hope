@@ -1,6 +1,7 @@
 {
   "plugins": [
     "lodash",
+    "styled-components",
     "transform-class-properties",
     "transform-object-rest-spread"
   ],
