@@ -5,21 +5,18 @@ import reducers from './reducers'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
-// NOTE: Used to enable hot reloading of the store!
-let store
-
 export default function configureStore (preloadedState) {
-  if (!store) {
-    store = createStore(reducers, preloadedState, composeEnhancers(
+  if (!window.__STORE__) {
+    window.__STORE__ = createStore(reducers, preloadedState, composeEnhancers(
       applyMiddleware(ReduxThunk)
     ))
 
-    return store
+    return window.__STORE__
   }
 
   if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
-    store.replaceReducer(reducers)
+    window.__STORE__.replaceReducer(reducers)
   }
 
-  return store
+  return window.__STORE__
 }
