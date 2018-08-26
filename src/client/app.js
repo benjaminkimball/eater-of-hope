@@ -1,17 +1,13 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
 import styled from 'styled-components'
 
-import reducers from './reducers'
+import configureStore from './configure-store'
 
-const store = createStore(
-  reducers,
-  window.__INITIAL_STATE__,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-)
+const store = configureStore(window.__INITIAL_STATE__)
 
+// NOTE: We have a copy in the store, let the original get garbage collected
 delete window.__INITIAL_STATE__
 
 const Header = styled.h1`
