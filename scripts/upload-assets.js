@@ -11,13 +11,10 @@ const distDir = join(process.cwd(), 'dist')
 const storage = new Storage()
 const bucket = storage.bucket('assets')
 
-function isAssetFile (file) {
-  return /(\.css|\.js|\.map)$/.test(file)
-}
-
-function toUploadTask (file) {
-  return (callback) => {
-    console.log('Uploading:', file)
+readDir(distDir)
+  .then(files => files.filter(file => /(\.css|\.js|\.map)$/.test(file)))
+  .then(files => files.map(file => (callback) => {
+    console.log(`  ${file}`)
 
     bucket
       .upload(join(distDir, file), {
@@ -27,18 +24,18 @@ function toUploadTask (file) {
       })
       .then(() => callback(null, file))
       .catch((err) => callback(err))
-  }
-}
-
-readDir(distDir)
-  .then(files => files.filter(isAssetFile))
-  .then(files => files.map(toUploadTask))
-  .then(tasks => parallelLimit(tasks, 2, (err, result) => {
-    if (err) {
-      console.error('Failed:', err.message)
-    } else {
-      console.log('Uploaded:')
-      console.log(`  ${result.join('\n  ')}`)
-    }
   }))
+  .then(tasks => {
+    console.log('Uploading:')
+
+    parallelLimit(tasks, 2, (err, result) => {
+      if (err) {
+        console.error('Failed:')
+        console.log(`  ${err.message}`)
+      } else {
+        console.log('Uploaded:')
+        console.log(`  ${result.join('\n  ')}`)
+      }
+    })
+  })
   .catch(console.error)
