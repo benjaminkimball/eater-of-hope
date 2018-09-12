@@ -12,7 +12,8 @@
     "start": "echo '\\033[1mReview the README to get up and running!'",
     "test": "NODE_ENV=test TZ=UTC jest",
     "test:coverage": "npm test -- --coverage",
-    "test:watch": "npm test -- --watch"
+    "test:watch": "npm test -- --watch",
+    "upload": "node scripts/upload-assets.js"
   },
   "repository": {
     "type": "git",
