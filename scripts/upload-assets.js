@@ -11,7 +11,7 @@ const runParallelTasks = promisify(parallelLimit)
 const distDir = join(process.cwd(), 'dist')
 
 const storage = new Storage()
-const bucket = storage.bucket('assets')
+const bucket = storage.bucket('eater-of-hope-assets')
 
 readDir(distDir)
   .then(files => files.filter(file => /(\.css|\.js|\.map)$/.test(file)))
@@ -22,8 +22,15 @@ readDir(distDir)
         gzip: true,
         public: true
       })
-      .then(() => callback())
-      .catch(callback)
+      .then(() => callback(null, file))
+      .catch((err) => {
+        // NOTE: If asset already exists, IAM role doesn't allow "delete"!
+        if (err.code === 403) {
+          callback(null, file)
+        } else {
+          callback(err)
+        }
+      })
   })))
   .then(tasks => runParallelTasks(tasks, 2))
   .then(console.log)
