@@ -23,8 +23,13 @@ readDir(distDir)
         public: true
       })
       .then(() => callback(null, file))
-      // NOTE: If asset already exists, IAM role doesn't allow "delete"!
-      .catch((err) => err.code === 403 ? callback() : callback(err))
+      .catch((err) => {
+        if (err.code === 403) {
+          callback(null, file)
+        } else {
+          callback(err)
+        }
+      })
   })))
   .then(tasks => runParallelTasks(tasks, 2))
   .then(console.log)
