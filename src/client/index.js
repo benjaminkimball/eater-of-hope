@@ -8,7 +8,6 @@ import App from './components/app'
 
 const store = configureStore(window.__INITIAL_STATE__)
 
-// NOTE: We have a copy in the store, let the original get garbage collected
 delete window.__INITIAL_STATE__
 
 render((
