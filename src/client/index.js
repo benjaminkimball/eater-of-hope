@@ -6,9 +6,7 @@ import configureStore from './configure-store'
 
 import App from './components/app'
 
-const store = configureStore(window.__INITIAL_STATE__)
-
-delete window.__INITIAL_STATE__
+const store = configureStore()
 
 render((
   <Provider store={store}>
