@@ -13,9 +13,8 @@ app.use(helmet())
 app.use(logging.requestLogger)
 
 const { ASSETS_BASE_URL: assetsBaseUrl } = process.env
-const config = process.env
 const html = readFileSync(join(process.cwd(), 'dist/index.html')).toString()
 
-app.get('*', renderClient({ assetsBaseUrl, config, html }))
+app.get('*', renderClient({ assetsBaseUrl, html }))
 
 app.use(logging.errorLogger)
