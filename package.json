@@ -12,8 +12,7 @@
     "start": "echo '\\033[1mReview the README to get up and running!'",
     "test": "NODE_ENV=test TZ=UTC jest",
     "test:coverage": "npm test -- --coverage",
-    "test:watch": "npm test -- --watch",
-    "upload": "node scripts/upload-assets.js"
+    "test:watch": "npm test -- --watch"
   },
   "repository": {
     "type": "git",
@@ -42,8 +41,6 @@
     "winston": "^3.1.0"
   },
   "devDependencies": {
-    "@google-cloud/storage": "^2.0.3",
-    "async": "^2.6.1",
     "babel-eslint": "^9.0.0",
     "babel-plugin-lodash": "^3.3.4",
     "babel-plugin-transform-class-properties": "^6.24.1",
