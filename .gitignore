@@ -66,4 +66,5 @@ Thumbs.db
 
 # Project specific
 .cache
+config.json
 dist
