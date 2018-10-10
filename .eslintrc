@@ -1,13 +1,11 @@
 env:
   jest/globals: true
 extends:
-  - plugin:flowtype/recommended
   - plugin:jest/recommended
   - plugin:security/recommended
   - standard
   - standard-react
 parser: babel-eslint
 plugins:
-  - flowtype
   - jest
   - security
