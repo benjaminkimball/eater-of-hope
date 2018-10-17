@@ -26,7 +26,7 @@
   "homepage": "https://github.com/benjaminkimball/eater-of-hope#readme",
   "dependencies": {
     "express": "^4.16.4",
-    "express-winston": "^3.0.0",
+    "express-winston": "^3.0.1",
     "helmet": "^3.14.0",
     "nconf": "^0.10.0",
     "prop-types": "^15.6.2",
