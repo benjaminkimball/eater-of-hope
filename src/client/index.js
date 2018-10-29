@@ -1,6 +1,20 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { render } from 'react-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 
-import App from './components/app'
+import Layout from './components/layout'
+import Grid from './components/grid'
 
-render(<App />, document.getElementById('root'))
+import Routes from './routes'
+
+render((
+  <Layout>
+    <Grid>
+      <Router>
+        <Suspense fallback={<p>Loading&hellip;</p>}>
+          <Routes />
+        </Suspense>
+      </Router>
+    </Grid>
+  </Layout>
+), document.getElementById('root'))
